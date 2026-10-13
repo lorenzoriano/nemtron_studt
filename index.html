@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1120">
+  <meta name="description" content="An interactive, source-grounded visual guide to NVIDIA Nemotron 3 Super: Mamba-2, grouped-query attention, LatentMoE and more.">
+  <title>Inside Nemotron 3 · An interactive field guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <div class="shell">
+    <aside class="rail" aria-label="Course navigation">
+      <a class="brand" href="#overview" aria-label="Inside Nemotron 3 home">
+        <span class="brand-mark"><span></span><span></span><span></span></span>
+        <span>inside<span class="brand-accent">/</span>nemotron<span class="brand-three">3</span></span>
+      </a>
+      <div class="rail-kicker">THE INTERACTIVE FIELD GUIDE</div>
+      <div class="rail-intro">A model you can take apart.</div>
+      <nav id="course-nav"></nav>
+      <div class="rail-foot">
+        <span class="live-pulse"></span> Based on NVIDIA's Super model
+        <small>Sources, assumptions &amp; model variants inside</small>
+      </div>
+    </aside>
+
+    <div class="main-column">
+      <header class="topbar">
+        <div id="crumbs" class="crumbs" aria-label="Breadcrumb"></div>
+        <div class="top-actions">
+          <button class="quiet-button" id="motion-toggle" type="button" aria-pressed="false" title="Pause or resume animations">◉ <span>Pause motion</span></button>
+          <button class="glossary-toggle" id="glossary-toggle" type="button" aria-expanded="false" aria-controls="glossary-panel">A–Z <span>Glossary</span></button>
+        </div>
+      </header>
+      <main id="app" tabindex="-1"></main>
+      <footer class="page-footer">
+        <span>Built to explain the architecture, not to simulate model weights.</span>
+        <a href="#sources">Read the sources ↗</a>
+      </footer>
+    </div>
+
+    <aside class="glossary" id="glossary-panel" aria-label="Always available glossary">
+      <div class="glossary-head">
+        <div><span class="eyebrow">KEEP THIS CLOSE</span><h2>Plain-English glossary</h2></div>
+        <button class="glossary-close" id="glossary-close" type="button" aria-label="Close glossary">×</button>
+      </div>
+      <label class="search-label" for="glossary-search">Find a term</label>
+      <input id="glossary-search" type="search" placeholder="Try “state” or “GQA”">
+      <div id="glossary-list" class="glossary-list"></div>
+      <p class="glossary-foot">Every acronym is expanded here. Select underlined terms in the lessons to jump to a definition.</p>
+    </aside>
+  </div>
+  <div class="mobile-scrim" id="mobile-scrim" hidden></div>
+</body>
+</html>
